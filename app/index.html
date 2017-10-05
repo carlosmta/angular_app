@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="gemStore">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carlo's App</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+
+</head>
+
+<body ng-controller="StoreController as store">
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active">
+                    <a href="#!main">Home</a>
+                </li>
+                <li>
+                    <a href="#!london">About</a>
+                </li>
+                <li>
+                    <a href="#!paris">Contact</a>
+                </li>
+            </ul>
+            <h3 class="text-muted">Carlos App</h3>
+        </div>
+
+        <div ng-view></div>
+
+        <!--  Products Container  -->
+        <div class="list-group">
+            <!--  Product Container  -->
+            <div class="list-group-item" ng-repeat="product in store.products">
+                <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+
+                <!-- Image Gallery  -->
+                <product-gallery></product-gallery>
+
+                <!-- Product Tabs  -->
+                <product-tabs></product-tabs>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!--
+        <div class="container-fluid">
+
+            <div ng-app="angularAppApp" ng-controller="MycustomcontrollerCtrl">
+
+                <div class="col-sm-6 col-md-4" ng-repeat="x in myData">
+
+                    <div class="thumbnail">
+                        <img src="images/Arsenal.jpg" alt="...">
+                        <div class="caption">
+                            <h4> {{ x.Name }} </h4>
+                            <p>{{ x.Country }}</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+-->
+        <div class="footer">
+            <p>♥ from the Yeoman team</p>
+        </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/controllers/mycustomcontroller.js"></script>
+    <script type="text/javascript" src="scripts/controllers_whole/products.js"></script>
+    <script type="text/javascript" src="scripts/controllers_whole/app.js"></script>
+
+    <!-- endbuild -->
+
+</body>
+
+</html>
